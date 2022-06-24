@@ -8,7 +8,7 @@ export default function NameInput() {
       <label htmlFor="name">
         <input
           id="name"
-          data-testid="common_register__input-name"
+          data-testid="admin_manage__input-name"
           onChange={ ({ target }) => setName(target.value) }
           placeholder="Enter name"
           type="name"

@@ -8,7 +8,7 @@ export default function EmailInput() {
       <label htmlFor="email">
         <input
           id="email"
-          data-testid="common_register__input-email"
+          data-testid="admin_manage__input-email"
           onChange={ ({ target }) => setEmail(target.value) }
           placeholder="Enter e-mail"
           type="email"

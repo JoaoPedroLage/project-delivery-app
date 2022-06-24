@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import apiGetAll from '../services/apiGetAll';
 import Header from '../components/Header';
-import ProductDetail from '../components/ProductDetail';
+import SellerProductDetail from '../components/SellerProductDetail';
+import apiGetAll from '../services/apiGetAll';
 
-export default function CustomerOrdersPage() {
+export default function SellerOrdersPage() {
   const [allSales, setAllSales] = useState([]);
   const navigate = useNavigate();
 
   async function getAllSales() {
-    const user = JSON.parse(localStorage.getItem('user'));
-    const sales = await apiGetAll(`sales/customer/${user.id}`);
+    const seller = JSON.parse(localStorage.getItem('user'));
+    const sales = await apiGetAll(`sales/seller/${seller.id}`);
     setAllSales([...sales]);
   }
 
@@ -20,9 +20,9 @@ export default function CustomerOrdersPage() {
 
   return (
     <div>
-      <div className="customer-orders-page-container">
+      <div className="seller-orders-page-container">
         <Header />
-        <div className="customer-orders-main-container">
+        <div className="seller-orders-main-container">
           {allSales.map((sale, index) => (
             <button
               key={ index }
@@ -31,7 +31,7 @@ export default function CustomerOrdersPage() {
               } }
               type="button"
             >
-              <ProductDetail sale={ sale } />
+              <SellerProductDetail sale={ sale } />
             </button>
           ))}
 

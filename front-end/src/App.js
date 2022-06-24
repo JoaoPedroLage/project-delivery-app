@@ -1,12 +1,14 @@
-import './App.css';
+// import './App.css';
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import CustomerOrdersPage from './pages/CustomerOrdersPage';
 import CustomerProductsPage from './pages/CustomerProductsPage';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
+import CustomerCheckoutPage from './pages/CustomerCheckoutPage';
+import AdminPage from './pages/AdminPage';
+import CustomerProductsDetailPage from './pages/CustomerProductsDetailPage';
+import SellerOrdersPage from './pages/SellerOrdersPage';
 
 function App() {
   return (
@@ -33,8 +35,28 @@ function App() {
       />
       <Route
         exact
+        path="customer/orders/:id"
+        element={ <CustomerProductsDetailPage /> }
+      />
+      <Route
+        exact
+        path="seller/orders"
+        element={ <SellerOrdersPage /> }
+      />
+      <Route
+        exact
         path="customer/products"
         element={ <CustomerProductsPage /> }
+      />
+      <Route
+        exact
+        path="customer/checkout"
+        element={ <CustomerCheckoutPage /> }
+      />
+      <Route
+        exact
+        path="admin/manage"
+        element={ <AdminPage /> }
       />
     </Routes>
   );

@@ -10,6 +10,12 @@ function AppProvider({ children }) {
   const [role, setRole] = useState('');
   const [token, setToken] = useState('');
   const [orders, setOrders] = useState([]);
+  const [quantity, setQuantity] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+  const [products, setProducts] = useState([]);
+  const [cost, setCost] = useState(0);
+  const [lastValue, setLastValue] = useState(0);
+  const [cart, setCart] = useState([]);
+  const [invalidUser, setInvalidUser] = useState(false);
 
   const context = {
     email,
@@ -26,6 +32,18 @@ function AppProvider({ children }) {
     setToken,
     orders,
     setOrders,
+    quantity,
+    setQuantity,
+    products,
+    setProducts,
+    cost,
+    setCost,
+    lastValue,
+    setLastValue,
+    cart,
+    setCart,
+    invalidUser,
+    setInvalidUser,
   };
 
   return (
